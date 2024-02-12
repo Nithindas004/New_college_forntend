@@ -1,11 +1,10 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import AddminNav from './AddminNav'
 
-const Viewall = () => {
-    const [data,setData]=new useState([])
+const ViewMark = () => {
+    const [data,setData] = new useState([])
     const getData = ()=>{
-        axios.get("http://localhost:3001/api/college/viewall").then(
+        axios.get("http://localhost:3001/api/college/viewmark").then(
             (response)=>{
                 setData(response.data)
             }
@@ -14,7 +13,6 @@ const Viewall = () => {
     useEffect(()=>{getData()},[])
   return (
     <div>
-        <AddminNav/>
         <div className="container">
             <div className="row">
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
@@ -22,11 +20,13 @@ const Viewall = () => {
   <thead>
     <tr>
       <th scope="col">Name</th>
-      <th scope="col">Roll No</th>
+      <th scope="col">Roll no.</th>
       <th scope="col">Admission No.</th>
-      <th scope="col">College Name</th>
-      <th scope="col">Parent Name</th>
-      <th scope="col">Phone</th>
+      <th scope="col">Maths</th>
+      <th scope="col">Python</th>
+      <th scope="col">C</th>
+      <th scope="col">Java</th>
+      <th scope="col">Android</th>
     </tr>
   </thead>
   <tbody>
@@ -34,12 +34,14 @@ const Viewall = () => {
         data.map(
             (value,index)=>{
                 return <tr>
-                <th scope="row">{value.name}</th>
-                <td>{value.rollno}</td>
-                <td>{value.admno}</td>
-                <td>{value.collegename}</td>
-                <td>{value.parentname}</td>
-                <td>{value.phone}</td>
+                <th scope="row">{value.studentid.name}</th>
+                <td>{value.studentid.rollno}</td>
+                <td>{value.studentid.admno}</td>
+                <td>{value.maths}</td>
+                <td>{value.python}</td>
+                <td>{value.C}</td>
+                <td>{value.java}</td>
+                <td>{value.android}</td>
               </tr>
             }
         )
@@ -53,4 +55,4 @@ const Viewall = () => {
   )
 }
 
-export default Viewall
+export default ViewMark

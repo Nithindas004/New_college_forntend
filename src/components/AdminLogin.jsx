@@ -14,7 +14,7 @@ const AdminLogin = () => {
     }
     const readValues = ()=>{
         if (input.adname=="admin" && input.adpass=="admin") {
-            nav("/admindash")
+            nav("/addstudent")
         } else {
             alert("Invalid login..")
         }

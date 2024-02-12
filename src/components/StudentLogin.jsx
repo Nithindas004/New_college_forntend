@@ -18,7 +18,8 @@ const StudentLogin = () => {
         axios.post("http://localhost:3001/api/student/loginstud",input).then(
             (res)=>{
                 if (res.data.status=="success") {
-                    nav("/studentdash")
+                    sessionStorage.setItem("studid",res.data.studid._id)
+                    nav("/addmark")
                 } else if(res.data.status=="Invalid Email"){
                     alert("Invalid Email..")
                 }

@@ -6,6 +6,7 @@ import StudentLogin from './components/StudentLogin';
 import AddStudent from './components/AddStudent';
 import Viewall from './components/Viewall';
 import ViewMark from './components/ViewMark';
+import AddMark from './components/AddMark';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/addstudent' element={<AddStudent/>} />
         <Route path='/viewall' element={<Viewall/>} />
         <Route path='/viewmark' element={<ViewMark/>} />
+        <Route path='/addmark' element={<AddMark/>} />
       </Routes>
       </BrowserRouter>
     </div>

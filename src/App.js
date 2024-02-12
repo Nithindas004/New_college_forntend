@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import StudentLogin from './components/StudentLogin';
 import AddStudent from './components/AddStudent';
 import Viewall from './components/Viewall';
+import ViewMark from './components/ViewMark';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/admin' element={<AdminLogin/>} />
         <Route path='/addstudent' element={<AddStudent/>} />
         <Route path='/viewall' element={<Viewall/>} />
+        <Route path='/viewmark' element={<ViewMark/>} />
       </Routes>
       </BrowserRouter>
     </div>
